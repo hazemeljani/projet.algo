@@ -1,0 +1,41 @@
+ALGORITHM algorithm_name
+VAR
+    sentence: string;
+  sentenceLength, wordCount, vowelCount: integer;
+  currentChar: char;
+BEGIN
+ // Initialize counters
+    sentence := ''; 
+  sentenceLength := 0; 
+  wordCount := 0; 
+  vowelCount := 0; 
+    // Read the sentence input
+  writeln('Enter a sentence (ending with a period): ');
+  readln(sentence);
+// Iterate through each character in the sentence
+  for currentChar in sentence do
+  begin
+    sentenceLength := sentenceLength + 1; 
+// Check if the character is a space (indicating a word boundary)
+    
+    if currentChar = ' ' then
+    begin
+      wordCount := wordCount + 1; 
+    end
+    // Add 1 to wordCount to account for the last word
+    else if (currentChar = 'a') or (currentChar = 'e') or (currentChar = 'i') or
+            (currentChar = 'o') or (currentChar = 'u') or
+            (currentChar = 'A') or (currentChar = 'E') or (currentChar = 'I') or
+            (currentChar = 'O') or (currentChar = 'U') then
+    begin
+      vowelCount := vowelCount + 1;
+    end;
+  end;
+
+  writeln('Sentence length: ', sentenceLength);
+  writeln('Number of words: ', wordCount + 1); 
+  writeln('Number of vowels: ', vowelCount);
+
+end.
+
+END
